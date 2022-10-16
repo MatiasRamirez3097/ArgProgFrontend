@@ -1,0 +1,9 @@
+div{
+    background-color: black;
+    height: 75px;
+    vertical-align: middle;
+}
+app-login-button{
+    float: right;
+    padding-top: 20px;
+}

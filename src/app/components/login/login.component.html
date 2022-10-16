@@ -1,0 +1,24 @@
+<section class="vh-100">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col">
+                <div class="card bg-dark">
+                    <div class="">
+                        <h2 class="fw-bold">
+                            Iniciar Sesión
+                        </h2>
+                        <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                            <div class="form-outline form-white">
+                                <input type="email" name="nombreUsuario" id="nombreUsuario" [(ngModel)]="nombreUsuario" required />
+                            </div>
+                            <div class="form-outline form-white">
+                                <input type="password" name="password" id="password" [(ngModel)]="password" required />
+                            </div>
+                            <button class="btn btn-outline-light" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
