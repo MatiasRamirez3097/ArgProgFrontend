@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginButtonComponent } from './components/buttons/login-button/login-button.component';
 import { LogoutButtonComponent } from './components/buttons/logout-button/logout-button.component';
 import { interceptorProvider } from './service/interceptor-service';
+import { NewExpComponent } from './components/exp/new-exp.component';
+import { EditExpComponent } from './components/exp/edit-exp.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { interceptorProvider } from './service/interceptor-service';
     HomeComponent,
     LoginComponent,
     LoginButtonComponent,
-    LogoutButtonComponent
+    LogoutButtonComponent,
+    NewExpComponent,
+    EditExpComponent
   ],
   imports: [
     BrowserModule,
