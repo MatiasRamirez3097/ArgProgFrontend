@@ -21,32 +21,38 @@ import { LogoutButtonComponent } from './components/buttons/logout-button/logout
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExpComponent } from './components/exp/new-exp.component';
 import { EditExpComponent } from './components/exp/edit-exp.component';
+import { EduComponent } from './components/edu/edu.component';
+import { NewEduComponent } from './components/edu/new-edu.component';
+import { EditEduComponent } from './components/edu/edit-edu.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LogoComponent,
-    AboutComponent,
-    ExpComponent,
-    SkillsComponent,
-    HomeComponent,
-    LoginComponent,
-    LoginButtonComponent,
-    LogoutButtonComponent,
-    NewExpComponent,
-    EditExpComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgCircleProgressModule.forRoot({}),
-    HttpClientModule,
-    FormsModule
-  ],
-  providers: [
-    interceptorProvider
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        LogoComponent,
+        AboutComponent,
+        ExpComponent,
+        SkillsComponent,
+        HomeComponent,
+        LoginComponent,
+        LoginButtonComponent,
+        LogoutButtonComponent,
+        NewExpComponent,
+        EditExpComponent,
+        EduComponent,
+        NewEduComponent,
+        EditEduComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgCircleProgressModule.forRoot({}),
+        HttpClientModule,
+        FormsModule
+    ],
+    providers: [
+        interceptorProvider
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
