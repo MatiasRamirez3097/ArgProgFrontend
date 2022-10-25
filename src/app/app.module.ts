@@ -24,6 +24,9 @@ import { EditExpComponent } from './components/exp/edit-exp.component';
 import { EduComponent } from './components/edu/edu.component';
 import { NewEduComponent } from './components/edu/new-edu.component';
 import { EditEduComponent } from './components/edu/edit-edu.component';
+import { HasComponent } from './components/has/has.component';
+import { EditHasComponent } from './components/has/edit-has.component';
+import { NewHasComponent } from './components/has/new-has.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +44,10 @@ import { EditEduComponent } from './components/edu/edit-edu.component';
         EditExpComponent,
         EduComponent,
         NewEduComponent,
-        EditEduComponent
+        EditEduComponent,
+        HasComponent,
+        EditHasComponent,
+        NewHasComponent
     ],
     imports: [
         BrowserModule,

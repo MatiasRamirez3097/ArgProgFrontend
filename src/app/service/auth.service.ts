@@ -1,23 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { JwtDto } from '../model/jwt-dto';
 import { LoginUser } from '../model/login-user';
 import { NewUser } from '../model/new-user';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/'
+    authURL = environment.url + 'auth/'
 
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
-  public nuevo(newUser: NewUser): Observable<any>{
-    return this.httpClient.post<any>(this.authURL + 'nuevo', newUser);
-  }
+    public nuevo(newUser: NewUser): Observable<any> {
+        return this.httpClient.post<any>(this.authURL + 'nuevo', newUser);
+    }
 
-  public login(loginUser: LoginUser): Observable<JwtDto>{
-    return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUser)
-  }
+    public login(loginUser: LoginUser): Observable<JwtDto> {
+        return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUser)
+    }
 }
