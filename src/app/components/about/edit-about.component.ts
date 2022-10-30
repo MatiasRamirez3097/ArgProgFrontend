@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
+import { ImageService } from 'src/app/service/image.service';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class EditAboutComponent implements OnInit {
     persona: Persona = null
-    constructor(private activatedRoute: ActivatedRoute, private personaService: PersonaService, private router: Router) { }
+    constructor(private activatedRoute: ActivatedRoute, private personaService: PersonaService, private router: Router, public imageService: ImageService) { }
 
     ngOnInit(): void {
         const id = this.activatedRoute.snapshot.params['id']
@@ -25,17 +26,20 @@ export class EditAboutComponent implements OnInit {
 
     onUpdate() {
         const id = this.activatedRoute.snapshot.params['id']
+        this.persona.img = this.imageService.url
         this.personaService.update(id, this.persona).subscribe({
             next: (v) => this.router.navigate(['']),
             error: (e) => {
                 alert('Error al editar!')
                 this.router.navigate([''])
             }
-        )
+        })
     }
 
     uploadImage($event: any) {
-
+        const id = this.activatedRoute.snapshot.params['id']
+        const name = 'profile_' + id
+        this.imageService.uploadImage($event, name)
     }
 
 }
