@@ -27,6 +27,7 @@ import { EditEduComponent } from './components/edu/edit-edu.component';
 import { HasComponent } from './components/has/has.component';
 import { EditHasComponent } from './components/has/edit-has.component';
 import { NewHasComponent } from './components/has/new-has.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +48,8 @@ import { NewHasComponent } from './components/has/new-has.component';
         EditEduComponent,
         HasComponent,
         EditHasComponent,
-        NewHasComponent
+        NewHasComponent,
+        EditAboutComponent
     ],
     imports: [
         BrowserModule,
