@@ -28,6 +28,9 @@ import { HasComponent } from './components/has/has.component';
 import { EditHasComponent } from './components/has/edit-has.component';
 import { NewHasComponent } from './components/has/new-has.component';
 import { EditAboutComponent } from './components/about/edit-about.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
     declarations: [
@@ -56,7 +59,9 @@ import { EditAboutComponent } from './components/about/edit-about.component';
         AppRoutingModule,
         NgCircleProgressModule.forRoot({}),
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideStorage(() => getStorage())
     ],
     providers: [
         interceptorProvider
