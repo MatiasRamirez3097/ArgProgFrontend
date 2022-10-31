@@ -1,33 +1,37 @@
 <div class="row">
-    <h1>Experiencia laboral</h1>
+    <div>
+        <h1>Experiencia laboral</h1>
+    </div>
     <div *ngIf="isLogged">
         <button class="btn btn-success" routerLink="/newexp" type="button">Agregar nueva</button>
     </div>
-    <table class="table">
-        <thead>
-            <th>
-                Empresa
-            </th>
-            <th>
-                Descripción
-            </th>
-            <th *ngIf="isLogged">
-                Acciones
-            </th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let experiencia of exp">
-                <td>{{experiencia.nombreExp}}</td>
-                <td>{{experiencia.descExp}}</td>
-                <td *ngIf="isLogged">
-                    <button class="btn btn-primary" routerLink="/editexp/{{experiencia.id}}">
-                        <i class="bi bi-pencil-fill"></i>
-                    </button>
-                    <button class="btn btn-danger" (click)="delete(experiencia.id)">
-                        <i class="bi bi-trash-fill"></i>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <table class="table">
+            <thead>
+                <th>
+                    Empresa
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th *ngIf="isLogged">
+                    Acciones
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let experiencia of exp">
+                    <td>{{experiencia.nombreExp}}</td>
+                    <td>{{experiencia.descExp}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-primary" routerLink="/editexp/{{experiencia.id}}">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                        <button class="btn btn-danger" (click)="delete(experiencia.id)">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
