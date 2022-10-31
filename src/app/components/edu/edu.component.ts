@@ -20,20 +20,15 @@ export class EduComponent implements OnInit {
     }
 
     loadEdu(): void {
-        this.eduService.lista().subscribe(
-            data => {
-                this.edu = data
-            }
-        )
+        this.eduService.lista().subscribe({
+            next: (v) => this.edu = v
+        })
     }
 
     delete(id?: number) {
-        if (id != undefined) this.eduService.delete(id).subscribe(
-            data => {
-                this.loadEdu()
-            }, err => {
-                alert('Error al eliminar!')
-            }
-        )
+        if (id != undefined) this.eduService.delete(id).subscribe({
+            next: (v) => this.loadEdu(),
+            error: (e) => alert('Error al eliminar!')
+        })
     }
 }

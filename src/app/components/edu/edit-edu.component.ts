@@ -14,25 +14,20 @@ export class EditEduComponent implements OnInit {
 
     ngOnInit(): void {
         const id = this.activatedRoute.snapshot.params['id']
-        this.eduService.detail(id).subscribe(
-            data => {
-                this.edu = data
-            }, err => {
+        this.eduService.detail(id).subscribe({
+            next: (v) => this.edu = v,
+            error: (e) => {
                 alert("Error al editar!")
                 this.router.navigate([''])
             }
-        )
+        })
     }
 
     onUpdate(): void {
         const id = this.activatedRoute.snapshot.params['id']
-        this.eduService.update(id, this.edu).subscribe(
-            data => {
-                this.router.navigate([''])
-            }, err => {
-                alert('Error al editar!')
-                this.router.navigate([''])
-            }
-        )
+        this.eduService.update(id, this.edu).subscribe({
+            error: (e) => alert('Error al editar!'),
+            complete: () => this.router.navigate([''])
+        })
     }
 }

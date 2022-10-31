@@ -22,21 +22,16 @@ export class ExpComponent implements OnInit {
 
     delete(id?: number) {
         if (id != undefined) {
-            this.expService.delete(id).subscribe(
-                data => {
-                    this.loadExp();
-                }, err => {
-                    alert('Error! No se pudo borrar')
-                }
-            )
+            this.expService.delete(id).subscribe({
+                next: (v) => this.loadExp(),
+                error: (e) => alert('Error! No se pudo borrar')
+            })
         }
     }
 
     loadExp(): void {
-        this.expService.lista().subscribe(
-            data => {
-                this.exp = data
-            }
-        )
+        this.expService.lista().subscribe({
+            next: (v) => this.exp = v
+        })
     }
 }

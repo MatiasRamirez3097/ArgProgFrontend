@@ -18,14 +18,9 @@ export class NewEduComponent implements OnInit {
 
     onCreate(): void {
         const edu = new Edu(this.nombreEdu, this.descEdu)
-        this.eduService.save(edu).subscribe(
-            data => {
-                alert('Educación creada')
-                this.router.navigate([''])
-            }, err => {
-                alert('Error al crear la educación')
-                this.router.navigate([''])
-            }
-        )
+        this.eduService.save(edu).subscribe({
+            error: (e) => alert('Error al crear la educación'),
+            complete: () => this.router.navigate([''])
+        })
     }
 }

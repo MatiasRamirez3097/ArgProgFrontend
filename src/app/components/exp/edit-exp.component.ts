@@ -15,25 +15,22 @@ export class EditExpComponent implements OnInit {
 
     ngOnInit(): void {
         const id = this.activatedRouter.snapshot.params['id']
-        this.expService.detail(id).subscribe(
-            data => {
-                this.exp = data
-            }, err => {
+        this.expService.detail(id).subscribe({
+            next: (v) => this.exp = v,
+            error: (e) => {
                 alert('Error!')
                 this.router.navigate([''])
             }
-        )
+        })
     }
 
     onUpdate(): void {
         const id = this.activatedRouter.snapshot.params['id']
-        this.expService.update(id, this.exp).subscribe(
-            data => {
-                this.router.navigate([''])
-            }, err => {
+        this.expService.update(id, this.exp).subscribe({
+            error: (e) => {
                 alert('Error!')
-                this.router.navigate([''])
-            }
-        )
+            },
+            complete: () => this.router.navigate([''])
+        })
     }
 }

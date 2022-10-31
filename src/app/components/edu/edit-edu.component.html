@@ -1,21 +1,31 @@
-<div class="container" *ngIf="edu">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombreEdu">Nombre de la institución</label>
-                    <input type="text" class="form-control" id="nombreEdu" name="nombreEdu" [(ngModel)]="edu.nombreEdu"
-                        required />
+<section class="vh-100">
+    <div class="container" *ngIf="edu">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col">
+                <div class="card bg-dark">
+                    <div class="card-body py-5 text-center text-white">
+                        <div class="row">
+                            <div>
+                                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                                    <div class="form-group">
+                                        <label for="nombreEdu">Nombre de la institución</label>
+                                        <input type="text" class="form-control" id="nombreEdu" name="nombreEdu"
+                                            [(ngModel)]="edu.nombreEdu" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descEdu">Descripción de los estudios</label>
+                                        <input type="text" class="form-control" id="descEdu" name="descEdu"
+                                            [(ngModel)]="edu.descEdu" required />
+                                    </div>
+                                    <button class="btn btn-primary">
+                                        Enviar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="descEdu">Descripción de los estudios</label>
-                    <input type="text" class="form-control" id="descEdu" name="descEdu" [(ngModel)]="edu.descEdu"
-                        required />
-                </div>
-                <button class="btn brn-primary">
-                    Enviar
-                </button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</section>

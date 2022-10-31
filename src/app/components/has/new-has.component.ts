@@ -20,14 +20,10 @@ export class NewHasComponent implements OnInit {
         const skill = new Skill(this.nombre, this.valor)
         this.skillService.save(skill).subscribe(
             {
-                next: (v) => {
-                    alert('Skill creada')
-                    this.router.navigate([''])
-                },
                 error: (e) => {
                     alert('Error!')
-                    this.router.navigate([''])
-                }
+                },
+                complete: () => this.router.navigate([''])
             },
         )
     }
