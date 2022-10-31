@@ -1,0 +1,9 @@
+section {
+    background-color: blueviolet;
+    align-content: center;
+}
+
+.container {
+    width: 40%;
+    height: 80%;
+}

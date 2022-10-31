@@ -22,6 +22,7 @@ export class EditAboutComponent implements OnInit {
                 this.router.navigate([''])
             }
         })
+        this.personaService.url = this.persona.img
     }
 
     onUpdate() {
