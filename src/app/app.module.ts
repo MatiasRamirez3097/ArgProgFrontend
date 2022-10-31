@@ -36,6 +36,7 @@ import { FacebookButtonComponent } from './components/buttons/facebook-button/fa
 import { LinkedinButtonComponent } from './components/buttons/linkedin-button/linkedin-button.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
     declarations: [
@@ -62,7 +63,8 @@ import { BannerComponent } from './components/banner/banner.component';
         FacebookButtonComponent,
         LinkedinButtonComponent,
         FooterComponent,
-        BannerComponent
+        BannerComponent,
+        ProjectsComponent
     ],
     imports: [
         BrowserModule,
