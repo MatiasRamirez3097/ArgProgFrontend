@@ -1,0 +1,13 @@
+td {
+    align-items: center;
+}
+
+.alinear {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    padding: 10px;
+}

@@ -1,22 +1,24 @@
 <div class="row">
-    <p>has works!</p>
-    <div *ngIf="isLogged">
-        <button class="btn btn-primary" routerLink="/newskill" type="button">Agregar nueva</button>
+    <div>
+        <h1>Hard and Soft Skills</h1>
     </div>
-    <div *ngFor="let skill of skills">
+    <div *ngIf="isLogged">
+        <button class="btn btn-success" routerLink="/newskill" type="button">Agregar nueva</button>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 alinear" *ngFor="let skill of skills">
         <circle-progress [percent]="skill.valor" [radius]="50" [title]="skill.nombre" [animation]="true">
         </circle-progress>
-        <td *ngIf="isLogged">
-            <button class="btn btn-primary" routerLink="/editskill/{{skill.id}}">
-                <i class="bi bi-pencil-fill"></i>
-                EDITAR
-            </button>
-        </td>
-        <td *ngIf="isLogged">
-            <button class="btn btn-primary" (click)="delete(skill.id)">
-                <i class="bi bi-pencil-fill"></i>
-                BORRAR
-            </button>
-        </td>
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-primary" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil-fill"></i>
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+        </div>
     </div>
 </div>

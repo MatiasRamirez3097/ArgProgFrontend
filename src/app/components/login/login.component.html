@@ -1,18 +1,20 @@
 <section class="vh-100">
-    <div class="container">
+    <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col">
                 <div class="card bg-dark">
-                    <div class="">
-                        <h2 class="fw-bold">
+                    <div class="card-body py-5 text-center text-white">
+                        <h1 class="fw-bold">
                             Iniciar Sesión
-                        </h2>
+                        </h1>
                         <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
                             <div class="form-outline form-white">
-                                <input type="email" name="nombreUsuario" id="nombreUsuario" [(ngModel)]="nombreUsuario" required />
+                                <input type="email" name="nombreUsuario" id="nombreUsuario" [(ngModel)]="nombreUsuario"
+                                    placeholder="Usuario" required />
                             </div>
                             <div class="form-outline form-white">
-                                <input type="password" name="password" id="password" [(ngModel)]="password" required />
+                                <input type="password" name="password" id="password" [(ngModel)]="password"
+                                    placeholder="Contraseña" required />
                             </div>
                             <button class="btn btn-outline-light" type="submit">Enviar</button>
                         </form>

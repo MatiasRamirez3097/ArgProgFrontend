@@ -1,6 +1,15 @@
-img{
+img {
     border-radius: 50%;
 }
-.row{
+
+.row {
     padding: 10px
+}
+
+button {
+    width: 100%;
+}
+
+.edit {
+    padding-bottom: 10px;
 }

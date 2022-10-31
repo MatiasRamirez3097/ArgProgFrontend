@@ -26,11 +26,10 @@ export class EditHasComponent implements OnInit {
     onUpdate(): void {
         const id = this.activatedRoute.snapshot.params['id']
         this.skillService.update(id, this.skill).subscribe({
-            next: (v) => this.router.navigate(['']),
             error: (e) => {
                 alert('Error!')
-                this.router.navigate([''])
-            }
+            },
+            complete: () => this.router.navigate([''])
         })
     }
 }

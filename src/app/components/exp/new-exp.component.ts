@@ -18,12 +18,13 @@ export class NewExpComponent implements OnInit {
 
     onCreate(): void {
         const exp = new Exp(this.nombreExp, this.descExp);
-        this.expService.save(exp).subscribe(data => {
-            alert("Experiencia añadida")
-            this.router.navigate([''])
-        }, err => {
-            alert('Error!')
-            this.router.navigate([''])
+        this.expService.save(exp).subscribe({
+            error: (e) => {
+                alert('Error!')
+            },
+            complete: () => {
+                this.router.navigate([''])
+            }
         })
     }
 }

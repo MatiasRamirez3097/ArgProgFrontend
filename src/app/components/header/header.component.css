@@ -1,9 +1,27 @@
-div{
+div,
+.nav {
     background-color: black;
     height: 75px;
     vertical-align: middle;
+    padding-right: 10px;
+
 }
-app-login-button{
+
+app-login-button,
+app-logout-button,
+app-facebook-button,
+app-github-button,
+app-linkedin-button,
+app-instagram-button {
     float: right;
     padding-top: 20px;
+    height: 80%;
+}
+
+@media(max-width: 575px) {
+    .nav {
+        height: 220px;
+    }
+
+    .redes {}
 }

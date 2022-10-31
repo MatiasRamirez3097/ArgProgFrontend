@@ -9,7 +9,6 @@ import { AboutComponent } from './components/about/about.component';
 import { ExpComponent } from './components/exp/exp.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { SkillsComponent } from './components/skills/skills.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
@@ -28,9 +27,15 @@ import { HasComponent } from './components/has/has.component';
 import { EditHasComponent } from './components/has/edit-has.component';
 import { NewHasComponent } from './components/has/new-has.component';
 import { EditAboutComponent } from './components/about/edit-about.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { GithubButtonComponent } from './components/buttons/github-button/github-button.component';
+import { InstagramButtonComponent } from './components/buttons/instagram-button/instagram-button.component';
+import { FacebookButtonComponent } from './components/buttons/facebook-button/facebook-button.component';
+import { LinkedinButtonComponent } from './components/buttons/linkedin-button/linkedin-button.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
     declarations: [
@@ -39,7 +44,6 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
         LogoComponent,
         AboutComponent,
         ExpComponent,
-        SkillsComponent,
         HomeComponent,
         LoginComponent,
         LoginButtonComponent,
@@ -52,7 +56,13 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
         HasComponent,
         EditHasComponent,
         NewHasComponent,
-        EditAboutComponent
+        EditAboutComponent,
+        GithubButtonComponent,
+        InstagramButtonComponent,
+        FacebookButtonComponent,
+        LinkedinButtonComponent,
+        FooterComponent,
+        BannerComponent
     ],
     imports: [
         BrowserModule,

@@ -1,27 +1,37 @@
 <div class="row">
-
-    <h1>Educación</h1>
-    <div *ngIf="isLogged">
-        <button class="btn btn-primary" routerLink="/newedu" type="button">Agregar nueva</button>
+    <div>
+        <h1>Educación</h1>
     </div>
-    <table class="table">
-        <tbody>
-            <tr *ngFor="let educacion of edu">
-                <td>{{educacion.nombreEdu}}</td>
-                <td>{{educacion.descEdu}}</td>
-                <td *ngIf="isLogged">
-                    <button class="btn btn-primary" routerLink="/editedu/{{educacion.id}}">
-                        <i class="bi bi-pencil-fill"></i>
-                        EDITAR
-                    </button>
-                </td>
-                <td *ngIf="isLogged">
-                    <button class="btn btn-primary" (click)="delete(educacion.id)">
-                        <i class="bi bi-pencil-fill"></i>
-                        BORRAR
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div *ngIf="isLogged">
+        <button class="btn btn-success" routerLink="/newedu" type="button">Agregar nueva</button>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <th>
+                    Institución
+                </th>
+                <th>
+                    Titulo
+                </th>
+                <th *ngIf="isLogged">
+                    Acciones
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let educacion of edu">
+                    <td>{{educacion.nombreEdu}}</td>
+                    <td>{{educacion.descEdu}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-primary" routerLink="/editedu/{{educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                        <button class="btn btn-danger" (click)="delete(educacion.id)">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

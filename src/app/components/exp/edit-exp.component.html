@@ -1,21 +1,31 @@
-<div class="contaimer" *ngIf="exp">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombreExp">Nombre de la empresa</label>
-                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="exp.nombreExp"
-                        required />
+<section class="vh-100" *ngIf="exp">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col">
+                <div class="card bg-dark">
+                    <div class="card-body py-5 text-center text-white">
+                        <div class="row">
+                            <div>
+                                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                                    <div class="form-group">
+                                        <label for="nombreExp">Nombre de la empresa</label>
+                                        <input type="text" class="form-control" id="nombreExp" name="nombreExp"
+                                            [(ngModel)]="exp.nombreExp" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descExp">Descripción de la experiencia</label>
+                                        <input type="text" class="form-control" id="descExp" name="descExp"
+                                            [(ngModel)]="exp.descExp" required />
+                                    </div>
+                                    <button class="btn btn-primary">
+                                        Enviar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="descExp">Descripción de la experiencia</label>
-                    <input type="text" class="form-control" id="descExp" name="descExp" [(ngModel)]="exp.descExp"
-                        required />
-                </div>
-                <button class="btn brn-primary">
-                    Enviar
-                </button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
